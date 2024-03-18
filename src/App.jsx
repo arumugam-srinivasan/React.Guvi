@@ -1,35 +1,69 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import'./react.css'
+import'@fortawesome/react-fontawesome'
 
-function App() {
-  const [count, setCount] = useState(0)
+const PriceCard = ({ level, users, price, features }) => (
+  <div className="price-card">
+    <h2 className="price-card-level">{level}</h2>
+    <h3 className="price-card-price">${price}/month</h3>
+    <ul className="price-card-features" >
+      {features.map((feature, index) => (
+        <li key={index} className={feature.important ? "important" : ""}>
+          {feature.text}
+          {feature.important && <span>*</span> }
+        </li>
+      ))}
+    </ul>
+    <center>
+    <button className="price-card-button"> Button</button>
+    </center>
+  </div>
+);
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+const App = () => (
+  <div className="app">
+    <PriceCard
+      level="FREE"
+      users="Button"
+      price="0"
+      features={[
+        { text: "50GB Storage"},
+        { text: "Unlimited Public Projects" },
+        { text: "Community Access" },
+        { text: "Unlimited Private Projects" },
+        { text: "Dedicated Phone Support" },
+        { text: "Free Subdomain" },
+        { text: "Monthly Status Reports" },
+      ]}
+    />
+    <PriceCard
+      level="PLUS"
+      users="Button"
+      price="9"
+      features={[
+        { text: "50GB Storage" },
+        { text: "Unlimited Public Projects" },
+        { text: "Community Access" },
+        { text: "Unlimited Private Projects" },
+        { text: "Dedicated Phone Support" },
+        { text: "Free Subdomain" },
+        { text: "Monthly Status Reports" },
+      ]}
+    />
+    <PriceCard
+      level="PRO"
+      users="Button"
+      price="49"
+      features={[
+        { text: "50GB Storage" },
+        { text: "Unlimited Public Projects"},
+        { text: "Community Access" },
+        { text: "Unlimited Private Projects" },
+        { text: "Dedicated Phone Support" },
+        { text: "Free Subdomain" },
+        { text: "Monthly Status Reports"},
+      ]}
+    />
+  </div>
+);
 
-export default App
+export default App;
