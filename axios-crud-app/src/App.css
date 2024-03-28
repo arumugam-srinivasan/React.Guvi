@@ -1,0 +1,64 @@
+/* App.css */
+
+.App {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.user-list {
+  margin-top: 20px;
+}
+
+.user-list h2 {
+  margin-bottom: 10px;
+}
+
+.user-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.user-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.user-list li:last-child {
+  border-bottom: none;
+}
+
+.add-user-form {
+  margin-top: 20px;
+}
+
+.add-user-form h2 {
+  margin-bottom: 10px;
+}
+
+.add-user-form form {
+  display: flex;
+  align-items: center;
+}
+
+.add-user-form input[type="text"] {
+  padding: 8px;
+  margin-right: 10px;
+}
+
+.add-user-form button {
+  padding: 8px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.add-user-form button:hover {
+  background-color: #0056b3;
+}
